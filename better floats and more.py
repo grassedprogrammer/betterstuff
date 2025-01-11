@@ -1,3 +1,4 @@
+
 #imports
 
 #global vars
@@ -67,14 +68,28 @@ def strfloat_ints(strfloat):
 
 def add_strfloats(strfloat1, strfloat2):
     #decoding
-    
+    temp_list = []
+    ram = 0
     lint, lint2 = strfloat_ints(strfloat1)
     lint3, lint4 = strfloat_ints(strfloat2)
     
     #adding
     
-    for i in 
-    
+    len_lint = len(lint2)
+    len_lint2 = len(lint4)
+    temp =  lint2 + lint4
+    len_temp = len(str(temp))
+    if len_temp > len_lint and len_temp > len_lint2:
+        for i in str(temp): temp_list.insert(i, -1)
+        ram = list_int(temp_list[0])
+        lint+=ram
+        temp_list.pop(0)
+        ram = None
+        for i in temp_list:
+            temp = str(temp) + i
+    lint+=lint3
+    return ints_strfloat(lint, temp)
+
     #returns str
     pass
 
@@ -82,5 +97,4 @@ def add_strfloats(strfloat1, strfloat2):
 
 #test
 
-a, b = strfloat_strs("123.456")
-print("   " + a + " " + b)
+print(add_strfloats("1.9", "1.9"))
