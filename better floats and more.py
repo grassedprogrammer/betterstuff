@@ -96,5 +96,5 @@ def add_strfloats(strfloat1, strfloat2):
 #objects
 
 #test
-
-print(add_strfloats("1.9", "1.9"))
+if __name__ == __main__:
+    print(add_strfloats("1.9", "1.9")) 
