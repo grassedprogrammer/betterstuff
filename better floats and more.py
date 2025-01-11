@@ -19,10 +19,6 @@ gint = 0
 
 gbool = False
 
-##full_val / full value is an string that is used to get the output of classes
-
-full_val = ""
-
 #fuctions
 
 ##list_str means list to string
@@ -37,59 +33,54 @@ def list_str(list):
 
 def list_int(thing):
     r = list_str(thing)
-    r = int(r)
-    return r
+    R = int(r)
+    return R
 
-##full_value is a function that returns full val
+##ints_strfloat converts two ints to one str float
 
-def full_value(integer1, integer2):
-    full_val = str(integer1) + "." + str(integer2)
-    return full_val
+def ints_strfloat(integer1, integer2)-> str:
+    lstr = str(integer1) + "." + str(integer2)
+    return lstr
+
+##turns a strfloat into 2 strings
+
+def strfloat_strs(strfloat):
+    lstr = ""
+    lstr2 = lstr
+    lbool = False
+    for i in strfloat:
+        if i == ".":
+            lbool = True
+        elif lbool == False:
+            lstr = lstr + i
+        else:
+            lstr2 = lstr2 + i
+    return lstr, lstr2
+
+##turns a strfloat into 2 integers
+
+def strfloat_ints(strfloat):
+    lint, lint2 = int(strfloat_strs(strfloat))
+    return lint, lint2
+
+##adds two strfloats
+
+def add_strfloats(strfloat1, strfloat2):
+    #decoding
+    
+    lint, lint2 = strfloat_ints(strfloat1)
+    lint3, lint4 = strfloat_ints(strfloat2)
+    
+    #adding
+    
+    for i in 
+    
+    #returns str
+    pass
 
 #objects
 
-##adfloat means advanced float
-class adfloat:
-    def __init__(self, int1, int2):
-        self.int1 = int1
-        self.int2 = int2
-    
-    #local vars
-    #
-    int1 = int1
-    local_list2 = []
-    local_list3 = []
-    ad = False
-    lint = 0
-    lint2 = 0
-    keep = False
-    #
-    #adds a float to a adfloat
-    def add_float(lfloat):
-        inte1 = int1
-        local_list = []
-        float = str(lfloat)
-        #inserting
-        for i in float:
-            Gram.insert(i, -1)
-        for i in Gram:
-            if i == ".":
-                ad = True
-                continue
-            elif ad == True:
-                Gram2.insert(i, -1)
-            else:
-                local_list.insert(i, -1)
-        #adding the values in the lists to ints
-        lint3 = len(local_list)
-        lint4 = len(Gram2)
-        lint = list_int(local_list)
-        lint2 = list_int(Gram2)
-        Lint = lint + int1
- 
-a = adfloat(1, 56)
-a = adfloat(2, 56)
+#test
 
-aaaa = [1,2,3]
-b = list_int(aaaa)
-print(b + 3)
+a, b = strfloat_strs("123.456")
+print("   " + a + " " + b)
