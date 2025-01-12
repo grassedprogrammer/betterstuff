@@ -61,8 +61,10 @@ def strfloat_strs(strfloat):
 ##turns a strfloat into 2 integers
 
 def strfloat_ints(strfloat):
-    lint, lint2 = int(strfloat_strs(strfloat))
-    return lint, lint2
+    lint, lint2 = strfloat_strs(strfloat)
+    lint3 = int(lint)
+    lint4 = int(lint2)
+    return lint3, lint4
 
 ##adds two strfloats
 
@@ -96,5 +98,5 @@ def add_strfloats(strfloat1, strfloat2):
 #objects
 
 #test
-if __name__ == __main__:
+if __name__ == '__main__':
     print(add_strfloats("1.9", "1.9")) 
