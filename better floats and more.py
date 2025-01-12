@@ -26,16 +26,15 @@ gbool = False
 
 def list_str(list):
     string = ""
-    for i in list:
+    for i in str(list):
         string = string + str(i)
     return string
 
 ##list_int means list to int
 
 def list_int(thing):
-    r = list_str(thing)
-    R = int(r)
-    return R
+    r = int(list_str(thing))  
+    return r
 
 ##ints_strfloat converts two ints to one str float
 
@@ -77,18 +76,18 @@ def add_strfloats(strfloat1, strfloat2):
     
     #adding
     
-    len_lint = len(lint2)
-    len_lint2 = len(lint4)
+    len_lint = len(str(lint2))
+    len_lint2 = len(str(lint4))
     temp =  lint2 + lint4
     len_temp = len(str(temp))
     if len_temp > len_lint and len_temp > len_lint2:
-        for i in str(temp): temp_list.insert(i, -1)
-        ram = list_int(temp_list[0])
+        for i in str(temp): temp_list.insert(int(i), -1)
+        ram = temp_list[0]
         lint+=ram
         temp_list.pop(0)
         ram = None
         for i in temp_list:
-            temp = str(temp) + i
+            temp = str(temp) + str(i)
     lint+=lint3
     return ints_strfloat(lint, temp)
 
